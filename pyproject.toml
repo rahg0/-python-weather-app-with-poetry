@@ -1,9 +1,9 @@
 [project]
 name = "python-weather-app-with-poetry"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "A Simple weather application built with Python and Poetry"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Raghu",email = "raghu@abcorp.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
