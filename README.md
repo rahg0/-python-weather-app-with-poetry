@@ -3,23 +3,44 @@
 ## Installation
 - Clone the repo:
 ```sh
-$ git clone https://github.com/rahg0/python-weather-app-with-pipenv.git
-$ cd python-weather-app-with-pipenv
+$ git clone https://github.com/rahg0/python-weather-app-with-poetry.git
+$ cd python-weather-app-with-poetry
 ```
 
-- Install `Pipenv` tool (if not present already):
+- Install `[Pipx](https://pipx.pypa.io/stable/installation/)` tool (if not present already):
 ```sh
-/python-weather-app-with-pipenv$ pip install pipenv
+/python-weather-app-with-poetry$ python3 -m pip install --user pipx
 ```
 
-- Install all the dependency packages locked in `Pipefile.lock` file:
+- Add `Pipx` installation path to `PATH` env variable (either via manual updating `PATH` variable or with `pipx ensurepath`).
 ```sh
-/python-weather-app-with-pipenv$ pipenv install 
+/python-weather-app-with-poetry$ pipx ensurepath
+
+OR
+
+/python-weather-app-with-poetry$ export PATH=$PATH:/<user>/.local/bin
 ```
 
-- Activate this project's virtualenv:
+- Install `[Poetry](https://python-poetry.org/docs#installation)` tool (if not present already):
 ```sh
-/python-weather-app-with-pipenv$ pipenv shell 
+/python-weather-app-with-poetry$ pipx install poetry
+```
+
+
+
+- Install all the dependency packages locked in `poetry.lock` file:
+```sh
+/python-weather-app-with-poetry$ poetry install --no-root
+```
+
+- Fetch the project's virtualenv:
+```sh
+/python-weather-app-with-poetry$ poetry env info --path
+```
+
+- Activate the virtualenv manually:
+```sh
+/python-weather-app-with-poetry$ source <venv-path>/bin/activate
 ```
 
 - Create an [OpenWeather](https://openweathermap.org/) account and generate an API Key.
@@ -28,12 +49,13 @@ $ cd python-weather-app-with-pipenv
 
 - Run the application:
 ```sh
-(python-weather-app-with-pipenv) /python-weather-app-with-pipenv$ python app.py
-Enter the city name: bengaluru
-Weather in Bengaluru:
-Temperature: 30.6°C
-Condition: Broken clouds
+(python-weather-app-with-poetry-py3.13) /python-weather-app-with-poetry$ python app.py
+Enter the city name: delhi
+Weather in Delhi:
+Temperature: 25.05°C
+Condition: Haze
 ```
+
 
 ## Scan for Security Issues
 ```sh
